@@ -2,12 +2,10 @@
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 
-class FileWriter
+class Program
 {
     public static void Main()
     {
-
-
 
         string dirFolder = @"C:\Users\craas\OneDrive\Рабочий стол\TestFolder";
 
@@ -53,10 +51,6 @@ class FileWriter
         {
             Console.WriteLine("В последнее использование папки менее 30 мин.назад");
         }
-
-
-
-
 
     }
 }

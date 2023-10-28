@@ -2,8 +2,6 @@
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 
-
-
 class Program
 {
     public static void Main()
@@ -55,7 +53,6 @@ class Program
         }
 
     }
-
 
 }
 
