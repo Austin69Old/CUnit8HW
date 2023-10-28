@@ -25,8 +25,18 @@ class FileWriter
                 try
                 {
                     DirectoryInfo dirInfo = new DirectoryInfo(dirFolder);
-                    dirInfo.Delete(true);
-                    Console.WriteLine("Папка удалена");
+
+
+                    foreach (FileInfo file in dirInfo.GetFiles())
+                    {
+                        file.Delete();
+                    }
+                    foreach (DirectoryInfo dir in dirInfo.GetDirectories())
+                    {
+                        dir.Delete(true);
+                    }
+
+                    Console.WriteLine("Файлы удалены из папки");
 
                 }
                 catch (Exception ex)
