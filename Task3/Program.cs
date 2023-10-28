@@ -16,8 +16,8 @@ class Program
         TimeSpan interval = now - lastEdit;
 
 
-        //if (interval.Minutes > 30)
-        //{
+        if (interval.Minutes > 30)
+        {
             if (Directory.Exists(dirFolder))
             {
                 try
@@ -59,8 +59,8 @@ class Program
                         dir.Delete(true);
                     }
 
-                    Console.WriteLine("Файлы удалены из папки");
-                    Console.WriteLine($"Очищено: {totalFolderSize}");
+                 
+                    Console.WriteLine($"Освобождено: {totalFolderSize}");
 
                     long newTotalFolderSize = folderSize(dirInfo);
                     Console.WriteLine($"Текущий размер папки: {newTotalFolderSize}");
@@ -75,11 +75,11 @@ class Program
             {
                 Console.WriteLine("Пути не существует");
             }
+    }
+        else
+        {
+            Console.WriteLine("В последнее использование папки менее 30 мин.назад");
         }
-        //else
-        //{
-        //    Console.WriteLine("В последнее использование папки менее 30 мин.назад");
-        //}
 
-    //}
+    }
 }
