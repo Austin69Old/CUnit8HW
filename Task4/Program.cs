@@ -52,10 +52,6 @@ namespace FinalTask
                 {
                     Console.WriteLine(ex.Message);
                 }
-
-
-
-
             }
             else
             {
