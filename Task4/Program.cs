@@ -34,18 +34,27 @@ namespace FinalTask
         {
             if (File.Exists(path))
             {
-
-                BinaryFormatter bf = new BinaryFormatter();
-                using (var fs = new FileStream(path, FileMode.OpenOrCreate))
+                try
                 {
-                    var Students = (Student[])bf.Deserialize(fs);
-                    foreach (var Student in Students)
+                    BinaryFormatter bf = new BinaryFormatter();
+                    using (var fs = new FileStream(path, FileMode.OpenOrCreate))
                     {
-                        Console.WriteLine($"Имя: {Student.Name}");
-                        Console.WriteLine($"Группа: {Student.Group}");
-                        Console.WriteLine($"Дата рождения: {Student.DateOfBirth}");
+                        var Students = (Student[])bf.Deserialize(fs);
+                        foreach (var Student in Students)
+                        {
+                            Console.WriteLine($"Имя: {Student.Name}");
+                            Console.WriteLine($"Группа: {Student.Group}");
+                            Console.WriteLine($"Дата рождения: {Student.DateOfBirth}");
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+
+
 
             }
             else
